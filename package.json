@@ -31,8 +31,7 @@
   "optionalDependencies": {
     "canvg": "^3.0.6",
     "core-js": "^3.6.0",
-    "dompurify": "^2.2.0",
-    "html2canvas": "^1.0.0-rc.5"
+    "dompurify": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -53,6 +52,7 @@
     "eslint": "^7.4.0",
     "eslint-plugin-jasmine": "^4.1.1",
     "folder-delete": "^1.0.4",
+    "html2canvas": "git+https://github.com/gurtam-space/html2canvas",
     "inquirer": "^6.5.2",
     "jasmine": "3.5.0",
     "jasmine-core": "3.5.0",
@@ -93,6 +93,7 @@
     "build": "rollup --config rollup.config.js",
     "version": "yarpm run build && yarpm run generate-docs && git add -A dist docs",
     "pretest": "yarpm run build",
+    "prepare": "yarpm run build",
     "test": "yarpm run test-node && yarpm run test-saucelabs",
     "test-saucelabs": "karma start test/saucelabs/karma.conf.js --single-run --verbose && for a in coverage/*; do codeclimate-test-reporter < \\\"$a/lcov.info\\\"; break; done",
     "test-local": "yarpm run test-unit && yarpm run test-node && yarpm run test-amd && yarpm run test-esm && yarpm run test-globals && yarpm run test-typescript && yarpm run test-webworker",
