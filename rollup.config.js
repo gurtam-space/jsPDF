@@ -81,14 +81,16 @@ const es = {
       format: "es",
       name: "jspdf",
       sourcemap: true,
-      plugins: []
+      plugins: [],
+      inlineDynamicImports: true
     },
     {
       file: pkg.module,
       format: "es",
       name: "jspdf",
       sourcemap: true,
-      plugins: [terser({})]
+      plugins: [terser({})],
+      inlineDynamicImports: true
     }
   ],
   external: externals,
